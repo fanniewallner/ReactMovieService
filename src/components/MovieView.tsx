@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { IMovie } from "../models/IMovie";
 import { useEffect, useState } from "react";
 import { getChoosenMovie } from "../services/MovieService";
@@ -13,6 +13,7 @@ import {
 } from "../styled/Wrappers";
 import { Button } from "../styled/Buttons";
 import { ImageShadow } from "../styled/Effects";
+import { Loader } from "./Loader";
 
 interface IMovieViewProps {
   input: string;
@@ -21,6 +22,8 @@ interface IMovieViewProps {
 export const MovieView = ({ input }: IMovieViewProps) => {
   const { id } = useParams<{ id: string }>();
   const [extendedMovie, setExtendedMovie] = useState<IMovie>();
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getExtendedInfo = async () => {
@@ -29,10 +32,16 @@ export const MovieView = ({ input }: IMovieViewProps) => {
         setExtendedMovie(data);
       } catch (error) {
         console.error("Error fetching extended movie info:", error);
+      } finally {
+        setLoading(false);
       }
     };
     getExtendedInfo();
   }, [id]);
+
+  if (loading) {
+    return <Loader></Loader>;
+  }
 
   /*   useEffect(() => {
     const getExtendedInfo = async () => {
@@ -46,7 +55,7 @@ export const MovieView = ({ input }: IMovieViewProps) => {
 
   return (
     <>
-      <Button>Return to results</Button>
+      <Button onClick={() => navigate(-1)}>Return to results</Button>
       <PageWrapper>
         <MovieViewLeftWrapper>
           <ImageShadow>

@@ -1,7 +1,7 @@
 //import { useParams } from "react-router-dom";
 
 import { IMovie } from "../models/IMovie";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { MovieContext } from "../contexts/MovieContext";
 import { useNavigate } from "react-router-dom";
 import {
@@ -18,8 +18,6 @@ import { ImageShadow } from "../styled/Effects";
 // }
 
 export const Movies = () => {
-  //const location = useLocation();
-  //const { state } = location;
   const { movies } = useContext(MovieContext);
   const navigate = useNavigate();
 
