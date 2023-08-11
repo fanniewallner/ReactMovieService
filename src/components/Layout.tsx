@@ -4,6 +4,8 @@ import { useReducer, useState } from "react";
 import { getMovies } from "../services/MovieService";
 import { ActionType, MoviesReducer } from "../reducers/MoviesReducer";
 import { MovieContext } from "../contexts/MovieContext";
+import { CenteringWrapperHorisontal } from "../styled/Wrappers";
+import "../index.css";
 
 //import { MovieContext, MovieDispatchContext } from "../contexts/MovieContext";
 /* import { Form } from "./Form"; */
@@ -35,6 +37,10 @@ export const Layout = () => {
     }
   };
 
+  const navigateHome = () => {
+    navigate("/");
+  };
+
   //const movies = useContext(MovieContext);
   //const dispatch = useContext(MovieDispatchContext);
   /* 
@@ -57,12 +63,19 @@ export const Layout = () => {
   }; */
   //const {currentMovie} = useContext(MovieContext)
   return (
-    <main>
-      <Form onSubmit={handleFormSubmit} />
-      <MovieContext.Provider value={{ movies, dispatch }}>
-        <Outlet />
-      </MovieContext.Provider>
-      {/* //{currentMovie && <MovieView movie={currentMovie}/>} */}
-    </main>
+    <>
+      <CenteringWrapperHorisontal>
+        <h1 className="logo" onClick={navigateHome}>
+          MovieFinder
+        </h1>
+        <Form onSubmit={handleFormSubmit} />
+      </CenteringWrapperHorisontal>
+      <main>
+        <MovieContext.Provider value={{ movies, dispatch }}>
+          <Outlet />
+        </MovieContext.Provider>
+        {/* //{currentMovie && <MovieView movie={currentMovie}/>} */}
+      </main>
+    </>
   );
 };

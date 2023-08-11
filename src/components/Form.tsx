@@ -1,4 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import styled from "styled-components";
+import { Button } from "../styled/Buttons";
+import "../index.css";
 
 //import { Link } from "react-router-dom";
 
@@ -37,8 +40,13 @@ export const Form = ({ onSubmit }: IPropsForm) => {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <input type="text" value={input} onChange={handleChange} />
-      <button type="submit">Search Movies</button>
+      <input
+        className="formInput"
+        type="text"
+        value={input}
+        onChange={handleChange}
+      />
+      <Button type="submit">Search</Button>
       <div></div>
     </form>
   );

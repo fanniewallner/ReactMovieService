@@ -67,3 +67,40 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+* {
+  background-color: black;
+  color: white;
+  font-family: "Tiempos Fine";
+}
+
+
+/* Layout */
+.logo {
+  font-family: "Tiempos Headline Bold";
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* MovieView */
+.ratings {
+  align-items: center;
+}
+
+
+/* Form */
+.formInput {
+  background-color: lightgray;
+  color: black;
+  margin-right: 0.3rem;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+}
+
+
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit:contain;
+}
