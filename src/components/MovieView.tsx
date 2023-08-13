@@ -7,6 +7,7 @@ import "../index.css";
 import {
   CenteringWrapperHorisontal,
   CenteringWrapperVertical,
+  MovieViewCenteringContent,
   MovieViewLeftWrapper,
   MovieViewRightWrapper,
   PageWrapper,
@@ -43,19 +44,12 @@ export const MovieView = ({ input }: IMovieViewProps) => {
     return <Loader></Loader>;
   }
 
-  /*   useEffect(() => {
-    const getExtendedInfo = async () => {
-      const data = await getChoosenMovie(input, id || "");
-      setExtendedMovie(data);
-    };
-    getExtendedInfo();
-  }, [input, id]);
- */
-  console.log(extendedMovie);
-
   return (
     <>
-      <Button onClick={() => navigate(-1)}>Return to results</Button>
+      <MovieViewCenteringContent>
+        <Button onClick={() => navigate(-1)}>Return to results</Button>
+      </MovieViewCenteringContent>
+
       <PageWrapper>
         <MovieViewLeftWrapper>
           <ImageShadow>
@@ -63,13 +57,15 @@ export const MovieView = ({ input }: IMovieViewProps) => {
           </ImageShadow>
           <CenteringWrapperVertical>
             <p>Imdb rating: {extendedMovie?.imdbRating}</p>
-            <p>Total votes:{extendedMovie?.imdbVotes}</p>
+            <p>Total votes: {extendedMovie?.imdbVotes}</p>
           </CenteringWrapperVertical>
         </MovieViewLeftWrapper>
         <MovieViewRightWrapper>
-          <h3>{extendedMovie?.Title}</h3>
+          <div className="titleWrapper">
+            <h3 className="title">{extendedMovie?.Title}</h3>
+          </div>
           <CenteringWrapperHorisontal>
-            <p>Released: {extendedMovie?.Released}</p>
+            <p>Released {extendedMovie?.Released}</p>
             <p>Directed by {extendedMovie?.Director}</p>
           </CenteringWrapperHorisontal>
           <span>Actors: {extendedMovie?.Actors}</span>

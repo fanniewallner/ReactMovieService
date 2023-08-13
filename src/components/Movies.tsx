@@ -38,11 +38,11 @@ export const Movies = () => {
     <PageWrapper>
       <MovieResultWrapper>
         {movies.length === 0 ? (
-          <p>No movies found..search again!</p>
+          <p className="title">No movies found..search again!</p>
         ) : (
           movies.map((movie: IMovie) => (
             <div key={movie.imdbID}>
-              <h3>{movie.Title}</h3>
+              <h3 className="title">{movie.Title}</h3>
               <ImageShadow>
                 <img className="image" src={movie.Poster} alt={movie.Title} />
               </ImageShadow>

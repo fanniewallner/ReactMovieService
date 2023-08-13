@@ -104,3 +104,18 @@ button:focus-visible {
   width: 100%;
   object-fit:contain;
 }
+
+.titleWrapper {
+  max-width: 300px;
+  height: 45px;
+
+}
+
+.title {
+  font-family: "Tiempos Headline Bold";
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
+  height: 45px;
+}
+

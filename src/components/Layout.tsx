@@ -6,6 +6,7 @@ import { ActionType, MoviesReducer } from "../reducers/MoviesReducer";
 import { MovieContext } from "../contexts/MovieContext";
 import { CenteringWrapperHorisontal } from "../styled/Wrappers";
 import "../index.css";
+import { Header } from "./HeaderAnimation";
 
 //import { MovieContext, MovieDispatchContext } from "../contexts/MovieContext";
 /* import { Form } from "./Form"; */
