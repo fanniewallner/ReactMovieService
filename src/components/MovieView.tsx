@@ -16,11 +16,7 @@ import { Button } from "../styled/Buttons";
 import { ImageShadow } from "../styled/Effects";
 import { Loader } from "./Loader";
 
-interface IMovieViewProps {
-  input: string;
-}
-
-export const MovieView = ({ input }: IMovieViewProps) => {
+export const MovieView = () => {
   const { id } = useParams<{ id: string }>();
   const [extendedMovie, setExtendedMovie] = useState<IMovie>();
   const [loading, setLoading] = useState(true);

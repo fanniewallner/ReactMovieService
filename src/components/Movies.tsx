@@ -1,7 +1,7 @@
 //import { useParams } from "react-router-dom";
 
 import { IMovie } from "../models/IMovie";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MovieContext } from "../contexts/MovieContext";
 import { useNavigate } from "react-router-dom";
 import {
