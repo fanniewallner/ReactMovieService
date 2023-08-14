@@ -19,11 +19,8 @@ export const Layout = () => {
   const handleFormSubmit = async (input: string) => {
     setInput(input);
     try {
-      console.log("input value", input);
-      // Fetch data using the input value
       const dataFromApi = await getMovies(input);
       dispatch({ type: ActionType.FETCHED_MOVIES, payload: dataFromApi });
-      console.log("Data response", dataFromApi);
       navigate("/movies");
     } catch (error) {
       console.error("Could not fetch movies", error);
@@ -46,7 +43,6 @@ export const Layout = () => {
         <MovieContext.Provider value={{ movies, dispatch }}>
           <Outlet />
         </MovieContext.Provider>
-        {/* //{currentMovie && <MovieView movie={currentMovie}/>} */}
       </main>
     </>
   );

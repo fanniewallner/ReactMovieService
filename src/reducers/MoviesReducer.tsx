@@ -15,8 +15,6 @@ export const MoviesReducer = (
 ): IMovie[] => {
   switch (action.type) {
     case ActionType.FETCHED_MOVIES: {
-      console.log("fetching movies", action.payload);
-
       return action.payload;
     }
     default: {

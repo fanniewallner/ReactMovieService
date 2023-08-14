@@ -1,5 +1,3 @@
-//import { useParams } from "react-router-dom";
-
 import { IMovie } from "../models/IMovie";
 import { useContext } from "react";
 import { MovieContext } from "../contexts/MovieContext";
@@ -11,28 +9,10 @@ import {
 } from "../styled/Wrappers";
 import { Button } from "../styled/Buttons";
 import { ImageShadow } from "../styled/Effects";
-//import { getMovies } from "../services/MovieService";
-
-// interface IMovieProps {
-//   movies: IMovie[];
-// }
 
 export const Movies = () => {
   const { movies } = useContext(MovieContext);
   const navigate = useNavigate();
-
-  //const currentMovie = useContext(MovieContext);
-  //console.log("context:", currentMovie);
-
-  // useEffect(() => {
-  //   console.log("Movies updated:", currentMovie);
-  // }, [currentMovie]);
-  /*   const movies = Array.isArray(state) ? (state as IMovie[]) : [];
-  const navigate = useNavigate();
-
-  const handleCurrent = (movieId: string) => {
-    navigate(`/${movieId}`);
-  }; */
 
   return (
     <PageWrapper>
