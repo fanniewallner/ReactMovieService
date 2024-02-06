@@ -42,7 +42,6 @@ export const MovieView = () => {
 
   return (
     <>
-      {" "}
       <MovieViewCenteringContent>
         <Button onClick={() => navigate(-1)}>Return to results</Button>
       </MovieViewCenteringContent>
@@ -54,14 +53,21 @@ export const MovieView = () => {
         </MovieViewLeftWrapper>
         <MovieViewRightWrapper>
           <LeftWrapperVertical>
-            <p>Imdb rating: {extendedMovie?.imdbRating}</p>
-            <p>Total votes: {extendedMovie?.imdbVotes}</p>
+            {extendedMovie?.imdbRating === "N/A" ? null : (
+              <p>Imdb rating: {extendedMovie?.imdbRating}</p>
+            )}
+            {extendedMovie?.imdbVotes === "N/A" ? null : (
+              <p>Imdb Votes: {extendedMovie?.imdbVotes}</p>
+            )}
           </LeftWrapperVertical>
           <div className="titleWrapper">
             <h3 className="title">{extendedMovie?.Title}</h3>
           </div>
           <CenteringWrapperHorisontal>
-            <p>Released {extendedMovie?.Released}</p>
+            {extendedMovie?.Released === "N/A" ? null : (
+              <p>Released {extendedMovie?.Released}</p>
+            )}
+
             <p>Directed by {extendedMovie?.Director}</p>
           </CenteringWrapperHorisontal>
           <span>Actors: {extendedMovie?.Actors}</span>
@@ -70,7 +76,11 @@ export const MovieView = () => {
           <article>{extendedMovie?.Plot}</article>
           <div>
             <h3>Awards</h3>
-            <article>{extendedMovie?.Awards}</article>
+            {extendedMovie?.Awards === "N/A" ? (
+              "No awards won"
+            ) : (
+              <article>{extendedMovie?.Awards}</article>
+            )}
           </div>
         </MovieViewRightWrapper>
       </PageWrapper>
