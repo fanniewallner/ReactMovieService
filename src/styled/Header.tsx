@@ -6,6 +6,7 @@ export const HeadingWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  flex-direction: row;
   align-items: center;
   text-transform: uppercase;
   font-family: "Tiempos Headline Bold";

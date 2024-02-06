@@ -71,9 +71,28 @@ button:focus-visible {
 * {
   background-color: black;
   color: white;
-  font-family: "Tiempos Fine";
+  font-family: "Poppins";
 }
 
+.headerContainer {
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.movieResultWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Layout */
 .logo {
@@ -87,7 +106,6 @@ button:focus-visible {
   align-items: center;
 }
 
-
 /* Form */
 .formInput {
   background-color: lightgray;
@@ -97,18 +115,15 @@ button:focus-visible {
   border-radius: 0.3rem;
 }
 
-
-
 .image {
   height: 100%;
   width: 100%;
-  object-fit:contain;
+  object-fit: contain;
 }
 
 .titleWrapper {
   max-width: 300px;
   height: 45px;
-
 }
 
 .title {
@@ -119,3 +134,14 @@ button:focus-visible {
   height: 45px;
 }
 
+.movieContainer {
+  transition: transform 0.3s ease;
+  &:hover {
+    animation: hoverAnimation 1s infinite;
+  }
+}
+
+.movieViewPage {
+  position: relative;
+  padding-top: 70px;
+}

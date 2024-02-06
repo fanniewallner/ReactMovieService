@@ -6,5 +6,5 @@ export const Button = styled.button`
   padding: 0.3rem;
   background-color: lightgray;
   color: black;
-  font-family: "Tiempos Headline Bold";
+  font-family: "Poppins";
 `;

@@ -4,7 +4,7 @@ import { useReducer, useState } from "react";
 import { getMovies } from "../services/MovieService";
 import { ActionType, MoviesReducer } from "../reducers/MoviesReducer";
 import { MovieContext } from "../contexts/MovieContext";
-import { CenteringWrapperHorisontal } from "../styled/Wrappers";
+
 import "../index.css";
 
 export interface ILayoutProps {
@@ -21,7 +21,8 @@ export const Layout = () => {
     try {
       const dataFromApi = await getMovies(input);
       dispatch({ type: ActionType.FETCHED_MOVIES, payload: dataFromApi });
-      navigate("/movies");
+      const url = `/movies?query=${encodeURIComponent(input)}`;
+      navigate(url);
     } catch (error) {
       console.error("Could not fetch movies", error);
     }
@@ -33,12 +34,12 @@ export const Layout = () => {
 
   return (
     <>
-      <CenteringWrapperHorisontal>
+      <div className="headerContainer">
         <h1 className="logo" onClick={navigateHome}>
           MovieFinder
         </h1>
         <Form onSubmit={handleFormSubmit} />
-      </CenteringWrapperHorisontal>
+      </div>
       <main>
         <MovieContext.Provider value={{ movies, dispatch }}>
           <Outlet />

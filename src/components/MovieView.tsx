@@ -6,7 +6,7 @@ import "../index.css";
 
 import {
   CenteringWrapperHorisontal,
-  CenteringWrapperVertical,
+  LeftWrapperVertical,
   MovieViewCenteringContent,
   MovieViewLeftWrapper,
   MovieViewRightWrapper,
@@ -42,21 +42,21 @@ export const MovieView = () => {
 
   return (
     <>
+      {" "}
       <MovieViewCenteringContent>
         <Button onClick={() => navigate(-1)}>Return to results</Button>
       </MovieViewCenteringContent>
-
       <PageWrapper>
         <MovieViewLeftWrapper>
           <ImageShadow>
             <img className="image" src={extendedMovie?.Poster}></img>
           </ImageShadow>
-          <CenteringWrapperVertical>
-            <p>Imdb rating: {extendedMovie?.imdbRating}</p>
-            <p>Total votes: {extendedMovie?.imdbVotes}</p>
-          </CenteringWrapperVertical>
         </MovieViewLeftWrapper>
         <MovieViewRightWrapper>
+          <LeftWrapperVertical>
+            <p>Imdb rating: {extendedMovie?.imdbRating}</p>
+            <p>Total votes: {extendedMovie?.imdbVotes}</p>
+          </LeftWrapperVertical>
           <div className="titleWrapper">
             <h3 className="title">{extendedMovie?.Title}</h3>
           </div>

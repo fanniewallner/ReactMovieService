@@ -3,19 +3,17 @@ import styled from "styled-components";
 export const PageWrapper = styled.div`
   display: flex;
   justify-content: center;
-  background-color: black;
   color: white;
   flex-direction: column;
-
-  @media (min-width: 845px) {
+  align-items: center;
+  padding: 2rem;
+  @media screen and (min-width: 768px) {
     flex-direction: row;
     align-items: center;
-    justify-content: center;
   }
 `;
 
 export const MovieViewLeftWrapper = styled.div`
-  background-color: black;
   height: 100%;
   width: 100%;
   display: flex;
@@ -45,18 +43,20 @@ export const MovieViewCenteringContent = styled(MovieViewLeftWrapper)`
   }
 `;
 
-export const MovieViewRightWrapper = styled.div`
-  background-color: black;
-  height: 100%;
-  width: 100%;
+export const BackToResultsButton = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  padding: 1rem;
-  flex-direction: column;
-  justify-content: center;
+  left: 260px;
+  top: 50px;
+  position: absolute;
+`;
 
+export const MovieViewRightWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   color: white;
-  gap: 1.5rem;
+  gap: 1rem;
 
   @media (min-width: 845px) {
     width: 55%;
@@ -64,6 +64,7 @@ export const MovieViewRightWrapper = styled.div`
     padding-right: 3rem;
     margin-right: 3rem;
     align-items: flex-start;
+    justify-content: flex-start;
   }
 `;
 
@@ -72,9 +73,7 @@ export const CenteringWrapperHorisontal = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
   color: white;
-  background-color: black;
   gap: 1rem;
 `;
 
@@ -84,16 +83,19 @@ export const CenteringWrapperVertical = styled.div`
   flex-wrap: nowrap;
   align-items: center;
   color: white;
-  background-color: black;
+`;
+
+export const LeftWrapperVertical = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  color: white;
 `;
 
 export const MovieResultWrapper = styled(CenteringWrapperHorisontal)`
-  width: 100vw;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
-
-  @media (min-width: 845px) {
-    width: 80vw;
-  }
+  gap: 2rem;
 `;
